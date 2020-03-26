@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="350dp"
+        android:background="@drawable/btn_rounded_pill_accent"
         android:checked="false"
-        android:text="ToggleButton"
-        android:textOff="OFF"
-        android:textOn="ON"
+        android:textOff="@string/off"
+        android:textOn="@string/on"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp"
         android:layout_marginEnd="60dp"
+        android:background="@drawable/btn_rounded_pill_accent"
         android:checked="false"
-        android:text="ToggleButton"
-        android:textOff="OFF"
-        android:textOn="ON"
+        android:textOff="@string/off"
+        android:textOn="@string/on"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="330dp"
-        android:text="MOTOR01"
+        android:text="@string/motor01"
         android:textAlignment="viewStart"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="330dp"
         android:layout_marginEnd="75dp"
-        android:text="MOTOR02"
+        android:text="@string/motor02"
         android:textAlignment="textEnd"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,10 +60,15 @@
         android:id="@+id/reset"
         android:layout_width="152dp"
         android:layout_height="82dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="524dp"
-        android:layout_marginEnd="120dp"
-        android:text="reset"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="125dp"
+        android:background="@drawable/btn_rounded_pill_danger"
+        android:text="@string/reset"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -85,4 +90,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/led_off" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
