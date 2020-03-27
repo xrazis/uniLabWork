@@ -16,6 +16,8 @@
         android:checked="false"
         android:textOff="@string/off"
         android:textOn="@string/on"
+        app:layout_constraintEnd_toStartOf="@+id/toggleButton2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,6 +32,8 @@
         android:textOff="@string/off"
         android:textOn="@string/on"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -41,6 +45,8 @@
         android:text="@string/motor01"
         android:textAlignment="viewStart"
         android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,6 +60,8 @@
         android:textAlignment="textEnd"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -77,6 +85,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="220dp"
+        app:layout_constraintEnd_toStartOf="@+id/Led_02"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/led_off" />
@@ -88,6 +99,8 @@
         android:layout_marginTop="220dp"
         android:layout_marginEnd="75dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Led_01"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/led_off" />
 
