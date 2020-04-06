@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
 
 	} while (!done);
 
-	close(sockfd);
+	pclose(sockfd);
 
 	return 0;
 }
