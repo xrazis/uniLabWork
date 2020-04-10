@@ -60,19 +60,15 @@ int main(int argc, char *argv[]) {
 
 								printf("Connected.\n");
 
+								done = 0;
 								do {
 																printf("~~  MENU  ~~ \n Choose one of the following: \n");
 																printf("\t 1. Average price of array Y");
 																printf("\t 2. Min and Max of array Y");
-																printf("\t 3. Product of a*Y");
-																printf("\t 9. EXIT \n >");
+																printf("\t 3. Product of a*Y \n >");
 																scanf(" %d", &user_choice);
 
 																send(sockfd, &user_choice, sizeof(int), 0);
-
-																if (user_choice == 9) {
-																								exit(0);
-																}
 
 																printf("Give the length of the array, n \n > ");
 																scanf(" %d", &array_length);
@@ -106,6 +102,7 @@ int main(int argc, char *argv[]) {
 																								//Product of a*y
 																								printf("Give float, a \n >");
 																								scanf("%f", &a);
+																								printf("%f\n", a);
 																								send(sockfd, &a, sizeof(float), 0);
 
 																								ret_array = (float*) malloc(array_length * sizeof(float));
@@ -122,10 +119,10 @@ int main(int argc, char *argv[]) {
 																								break;
 																}
 
-																free(y);
-																free(ret_array);
+																printf("\n\n\n Do you want to continue? ( 0-YES  /  1-NO)  \n >");
+																scanf(" %d", &done);
 
-								} while (1);
+								} while (!done);
 
 								close(sockfd);
 								return 0;

@@ -32,6 +32,8 @@ xdr_product (XDR *xdrs, product *objp)
 {
 	register int32_t *buf;
 
+	 if (!xdr_float (xdrs, &objp->a))
+		 return FALSE;
 	 if (!xdr_array (xdrs, (char **)&objp->y.y_val, (u_int *) &objp->y.y_len, 100,
 		sizeof (int), (xdrproc_t) xdr_int))
 		 return FALSE;

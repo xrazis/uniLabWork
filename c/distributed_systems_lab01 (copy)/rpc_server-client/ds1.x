@@ -7,6 +7,7 @@ struct minmax{
 };
 
 struct product{
+	float a;
 	int y<100>;
 	float x<100>;
 };
