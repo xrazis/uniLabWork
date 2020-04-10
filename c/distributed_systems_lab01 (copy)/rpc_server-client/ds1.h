@@ -31,6 +31,7 @@ struct minmax {
 typedef struct minmax minmax;
 
 struct product {
+	float a;
 	struct {
 		u_int y_len;
 		int *y_val;

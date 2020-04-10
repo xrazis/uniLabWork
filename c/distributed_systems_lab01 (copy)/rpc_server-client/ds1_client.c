@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <netdb.h>
 #include <netinet/in.h>
 #include "ds1.h"
 
@@ -32,19 +31,19 @@ void distributed_systems_1_average(char *host, char *port, int newsockfd) {
 								float *result_1;
 								average case1_1_arg;
 
-
+		#ifndef DEBUG
 								clnt = clnt_create(host, DISTRIBUTED_SYSTEMS, DS_V1, "udp");
 								if (clnt == NULL) {
 																clnt_pcreateerror(host);
 																exit(1);
 								}
-
+		#endif /* DEBUG */
 								//Get array_length
 								n2 = recv(newsockfd, &array_length, sizeof(int), 0);
-								//Initialize array
-								y = (int*) malloc(array_length * sizeof(int));
 								//Get array
 								n3 = recv(newsockfd, y, array_length * sizeof(int), 0);
+								//Initialize array
+								y = (int*) malloc(array_length * sizeof(int));
 
 								case1_1_arg.y.y_len = array_length;
 								case1_1_arg.y.y_val = (int*) malloc(2 * sizeof(int));
@@ -58,12 +57,16 @@ void distributed_systems_1_average(char *host, char *port, int newsockfd) {
 																clnt_perror(clnt, "call failed");
 								} else {
 																avg = *result_1;
+																printf("%f\n", avg);
 																send(newsockfd, &avg, sizeof(float), 0);
 								}
 
 								free(y);
-								xdr_free((xdrproc_t)xdr_float, (char *)&result_1);
+
+		#ifndef DEBUG
 								clnt_destroy(clnt);
+		#endif  /* DEBUG */
+								exit(0);
 }
 
 void distributed_systems_1_minmax(char *host, char *port, int newsockfd) {
@@ -75,17 +78,19 @@ void distributed_systems_1_minmax(char *host, char *port, int newsockfd) {
 								minmax *result_2;
 								minmax case2_1_arg;
 
+	#ifndef DEBUG
 								clnt = clnt_create(host, DISTRIBUTED_SYSTEMS, DS_V1, "udp");
 								if (clnt == NULL) {
 																clnt_pcreateerror(host);
 																exit(1);
 								}
+	#endif /* DEBUG */
 								//Get array_length
 								n2 = recv(newsockfd, &array_length, sizeof(int), 0);
-								//Initialize array
-								y = (int*) malloc(array_length * sizeof(int));
 								//Get array
 								n3 = recv(newsockfd, y, array_length * sizeof(int), 0);
+								//Initialize array
+								y = (int*) malloc(array_length * sizeof(int));
 
 								case2_1_arg.y.y_len = array_length;
 								case2_1_arg.y.y_val = (int*) malloc(2 * sizeof(int));
@@ -100,11 +105,16 @@ void distributed_systems_1_minmax(char *host, char *port, int newsockfd) {
 								} else {
 																mm_array[0] = result_2->y.y_val[0];
 																mm_array[1] = result_2->y.y_val[1];
+
 																send(newsockfd, mm_array, sizeof(mm_array), 0);
 								}
 
 								free(y);
+
+	#ifndef DEBUG
 								clnt_destroy(clnt);
+	#endif  /* DEBUG */
+								exit(0);
 }
 
 void distributed_systems_1_product(char *host, char *port, int newsockfd) {
@@ -118,11 +128,13 @@ void distributed_systems_1_product(char *host, char *port, int newsockfd) {
 								product *result_3;
 								product case3_1_arg;
 
+	#ifndef DEBUG
 								clnt = clnt_create(host, DISTRIBUTED_SYSTEMS, DS_V1, "udp");
 								if (clnt == NULL) {
 																clnt_pcreateerror(host);
 																exit(1);
 								}
+	#endif /* DEBUG */
 								//Get array_length
 								n2 = recv(newsockfd, &array_length, sizeof(int), 0);
 								//Initialize array
@@ -132,8 +144,7 @@ void distributed_systems_1_product(char *host, char *port, int newsockfd) {
 								//Get float
 								n4 = recv(newsockfd, &a, sizeof(float), 0);
 
-								case3_1_arg.x.x_len = 1;
-								case3_1_arg.x.x_val[0] = a;
+								case3_1_arg.a = a;
 								case3_1_arg.y.y_len = array_length;
 								case3_1_arg.y.y_val = (int*) malloc(array_length * sizeof(int));
 
@@ -149,50 +160,22 @@ void distributed_systems_1_product(char *host, char *port, int newsockfd) {
 																ret_array = (float*) malloc(array_length * sizeof(float));
 																for (int i = 0; i < array_length; i++) {
 																								ret_array[i] = result_3->x.x_val[i];
-																								printf("%f\n", ret_array[i]);
 																}
-																send(newsockfd, ret_array, array_length * sizeof(float), 0);
+																send(newsockfd, ret_array, sizeof(ret_array), 0);
 								}
 
 								free(y);
 
+	#ifndef DEBUG
 								clnt_destroy(clnt);
-}
-
-void launchFunction(int newsockfd, char *host, char *port){
-
-								int n1, user_choice = 0;
-
-								//Launch suitable function
-								do {
-																// Get user_choice for calculation
-																n1 = recv(newsockfd, &user_choice, sizeof(int), 0);
-
-																switch (user_choice) {
-																case 1:
-																								distributed_systems_1_average(host, port, newsockfd);
-																								break;
-																case 2:
-																								distributed_systems_1_minmax(host, port, newsockfd);
-																								break;
-																case 3:
-																								distributed_systems_1_product(host, port, newsockfd);
-																								break;
-																default:
-																								printf("Server waiting for user choice");
-																								sleep(1);
-																								break;
-																}
-								} while(user_choice !=9);
-
+	#endif  /* DEBUG */
 								exit(0);
 }
 
-
 int main(int argc, char *argv[]) {
 
-								int pid, sockfd, newsockfd, portno, clilen, done, user_choice;
 								char *host, *port;
+								int n1, sockfd, newsockfd, portno, clilen, done, user_choice;
 
 								if (argc < 2) {
 																printf("usage: %s server_host\n", argv[0]);
@@ -222,34 +205,41 @@ int main(int argc, char *argv[]) {
 																error("ERROR on binding");
 
 								listen(sockfd, 5);
-								clilen = sizeof(cli_addr);
 
-								while (1) {
-																newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
+								for (;;) {
+																printf("Waiting for a connection...\n");
+																clilen = sizeof(cli_addr);
+																newsockfd = accept(sockfd, (struct sockaddr*) &cli_addr, &clilen);
+																if (newsockfd < 0)
+																								error("ERROR on accept");
 
-
-																if (newsockfd < 0) {
-																								perror("ERROR on accept");
-																								exit(1);
-																}
-
-																pid = fork();
-
-																if (pid < 0) {
-																								perror("ERROR on fork");
-																								exit(1);
-																}
-
-																if (pid == 0) {
-																								/* This is the client process */
+																if (fork() == 0) {
 																								close(sockfd);
-																								launchFunction(newsockfd, host, port);
-																								exit(0);
+																								printf("Connected.\n");
 																}
-																else {
-																								close(newsockfd);
-																}
-								};
 
-								return 0;
+																done = 0;
+																do {
+																								// Get user_choice for calculation
+																								n1 = recv(newsockfd, &user_choice, sizeof(int), 0);
+																								//Launch suitable function
+																								switch (user_choice) {
+																								case 1:
+																																distributed_systems_1_average(host, port, newsockfd);
+																																break;
+																								case 2:
+																																distributed_systems_1_minmax(host, port, newsockfd);
+																																break;
+																								case 3:
+																																distributed_systems_1_product(host, port, newsockfd);
+																																break;
+																								default:
+																																printf("Something went wrong!");
+																																break;
+																								}
+																} while (!done);
+
+																close(newsockfd);
+																exit(0);
+								}
 }
