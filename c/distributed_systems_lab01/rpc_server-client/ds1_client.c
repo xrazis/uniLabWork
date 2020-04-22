@@ -62,7 +62,7 @@ void distributed_systems_1_average(char *host, char *port, int newsockfd) {
 								}
 
 								free(y);
-								xdr_free((xdrproc_t)xdr_float, (char *)&result_1);
+								// xdr_free((xdrproc_t)xdr_float, (char *)&result_1);
 								clnt_destroy(clnt);
 }
 

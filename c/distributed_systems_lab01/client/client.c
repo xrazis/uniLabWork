@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
 								printf("Connected.\n");
 
 								do {
-																printf("~~  MENU  ~~ \n Choose one of the following: \n");
+																printf("\n~~  MENU  ~~ \n Choose one of the following: \n");
 																printf("\t 1. Average price of array Y");
 																printf("\t 2. Min and Max of array Y");
 																printf("\t 3. Product of a*Y");
@@ -116,6 +116,7 @@ int main(int argc, char *argv[]) {
 																																printf("\t (a*y)[i]: %.2f", ret_array[i]);
 																								}
 
+																								free(ret_array);
 																								break;
 																default:
 																								printf("Wrong input!");
@@ -123,7 +124,6 @@ int main(int argc, char *argv[]) {
 																}
 
 																free(y);
-																free(ret_array);
 
 								} while (1);
 
