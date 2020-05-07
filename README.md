@@ -1,3 +1,3 @@
 ## UniWA
 
-Lab assignments for my university.
+Some of my lab assignments.
