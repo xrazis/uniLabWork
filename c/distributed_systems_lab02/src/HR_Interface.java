@@ -5,10 +5,14 @@ import java.rmi.RemoteException;
 public interface HR_Interface extends Remote {
     String list() throws RemoteException;
 
-    void book() throws RemoteException;
+    String book(String[] args) throws RemoteException;
 
-    void guests() throws RemoteException;
+    String guests() throws RemoteException;
 
-    void cancel() throws RemoteException;
+    String cancel(String[] args) throws RemoteException;
+
+    String addRoomListener(String roomType, RoomListener addRoomListener) throws RemoteException;
+
+    String removeRoomListener(String roomType, RoomListener removeRoomListener) throws RemoteException;
 
 }
