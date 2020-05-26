@@ -18,11 +18,7 @@ public class HR_Client extends UnicastRemoteObject implements RoomListener {
 
             System.out.println("Welcome to the (somewhat) Booking clone");
             if (args.length == 1) {
-                System.out.println("~Menu~\n" +
-                        "1. Display all available rooms: HR_Client list <hostname>\n" +
-                        "2. Book x rooms of y type in name z: HR_Client book <hostname> <x> <y> <z>\n" +
-                        "3. List all clients: HR_Client guests <hostname>\n" +
-                        "4. Cancel x rooms of y type in name z: HR_Client cancel\n");
+                printOptions();
             } else {
                 switch (args[1]) {
                     case "list":
@@ -66,6 +62,8 @@ public class HR_Client extends UnicastRemoteObject implements RoomListener {
                             System.exit(1);
                         }
                         break;
+                    default:
+                        printOptions();
                 }
             }
         } catch (Exception e) {
@@ -78,5 +76,13 @@ public class HR_Client extends UnicastRemoteObject implements RoomListener {
     public void roomCanceled(String notify) throws RemoteException {
         // REMOVE LISTENER AFTER NOTIFY
         System.out.println(notify);
+    }
+
+    public static void printOptions() {
+        System.out.println("~Menu~\n" +
+                "1. Display all available rooms: HR_Client list <hostname>\n" +
+                "2. Book x type of y rooms in name z: HR_Client book <hostname> <x> <y> <z>\n" +
+                "3. List all clients: HR_Client guests <hostname>\n" +
+                "4. Cancel x type of y rooms in name z: HR_Client cancel\n");
     }
 }

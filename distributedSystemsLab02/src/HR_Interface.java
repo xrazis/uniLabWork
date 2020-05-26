@@ -3,7 +3,7 @@ import java.rmi.RemoteException;
 
 //RMI
 public interface HR_Interface extends Remote {
-    String list() throws RemoteException;
+    StringBuilder list() throws RemoteException;
 
     String book(String[] args) throws RemoteException;
 

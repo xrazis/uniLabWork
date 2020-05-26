@@ -5,11 +5,12 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 //Remote Object
 public class HR_Impl extends UnicastRemoteObject implements HR_Interface {
 
-    private final List<Person> personArrayList = new ArrayList<>();
+    private final List<Person> personArrayList = new CopyOnWriteArrayList<>();
     private final List<RoomListener> roomListenerA = new ArrayList<>();
     private final List<RoomListener> roomListenerB = new ArrayList<>();
     private final List<RoomListener> roomListenerC = new ArrayList<>();
@@ -22,35 +23,38 @@ public class HR_Impl extends UnicastRemoteObject implements HR_Interface {
     }
 
     @Override
-    public String list() throws RemoteException {
-        String listRooms = "";
-        for (int i = 0; i < 5; i++) {
-            listRooms += mHotel.availability[i] + " rooms type " + mHotel.pos[i] + " " + mHotel.price[i] + " euros/night\n";
-        }
+    public StringBuilder list() throws RemoteException {
+        StringBuilder listRooms = new StringBuilder();
+        listRooms.append(mHotel.availability[0]).append(" rooms type A").append("A").append(" ").append(mHotel.price[0]).append(" euros/night\n");
+        listRooms.append(mHotel.availability[1]).append(" rooms type B").append("B").append(" ").append(mHotel.price[1]).append(" euros/night\n");
+        listRooms.append(mHotel.availability[2]).append(" rooms type C").append("C").append(" ").append(mHotel.price[2]).append(" euros/night\n");
+        listRooms.append(mHotel.availability[3]).append(" rooms type D").append("D").append(" ").append(mHotel.price[3]).append(" euros/night\n");
+        listRooms.append(mHotel.availability[4]).append(" rooms type E").append("E").append(" ").append(mHotel.price[4]).append(" euros/night\n");
+
         return listRooms;
     }
 
     @Override
     public String book(String[] args) throws RemoteException {
+        String roomType = args[2];
+        int roomCount = Integer.parseInt(args[3]);
+        String roomName = args[4];
 
-        List<String> checkRoomType = new ArrayList<>(Arrays.asList(mHotel.pos));
+        int roomBill = 0;
+        String bookResult = "SERVER-SIDE ERROR";
 
-        String bookResult = "";
-        int roomsCount = Integer.parseInt(args[3]);
-        int roomsBill = 0;
-
-        if (checkRoomType.contains(args[2])) {
-            int index = checkRoomType.indexOf(args[2]);
-            if (roomsCount <= mHotel.availability[index]) {
-                mHotel.availability[index] -= roomsCount;
-                roomsBill = roomsCount * mHotel.price[index];
-                bookResult = roomsBill + " Euros is your total bill, " + args[4] + ".";
-                Person mPerson = new Person(roomsCount, args[2], args[4], roomsBill);
-                personArrayList.add(mPerson);
-            } else if (roomsCount > mHotel.availability[index] && mHotel.availability[index] > 0) {
-                bookResult = "Booking Unsuccessful. Rooms are not enough.\n Do you want to book " + mHotel.availability[index] + " rooms instead?";
-            } else
+        if (mHotel.book(roomType, roomCount)) {
+            roomBill = roomCount * mHotel.getPrice(roomType);
+            bookResult = roomBill + " Euros is your total bill, " + roomName + ".";
+            Person mPerson = new Person(roomCount, roomType, roomName, roomBill);
+            personArrayList.add(mPerson);
+        } else {
+            int roomAvailability = mHotel.getAvail(roomType);
+            if (roomAvailability > 0) {
+                bookResult = "Booking Unsuccessful. Rooms are not enough.\n Do you want to book " + roomAvailability + " rooms instead?";
+            } else {
                 bookResult = "Booking Unsuccessful. Rooms not available.\n Do you want to subscribe to a list?.";
+            }
         }
         return bookResult;
     }
@@ -70,31 +74,32 @@ public class HR_Impl extends UnicastRemoteObject implements HR_Interface {
 
     @Override
     public String cancel(String[] args) throws RemoteException {
-        int roomsCount = Integer.parseInt(args[3]);
-        int roomsBill = 0;
+        String roomType = args[2];
+        int roomCount = Integer.parseInt(args[3]);
+        String roomName = args[4];
+
+        int roomBill = 0;
+        String cancelResult = "SERVER-SIDE ERROR";
 
         for (Person person : personArrayList) {
-            if (person.name.equals(args[4]) && person.roomType.equals(args[2])) {
-                List<String> checkRoomType = new ArrayList<>(Arrays.asList(mHotel.pos));
-                int position = personArrayList.indexOf(person);
-                System.out.println(position);
-                int index = checkRoomType.indexOf(args[2]);
-                if (person.roomsCount - roomsCount > 0) {
-                    roomsBill = roomsCount * mHotel.price[index];
-                    Person newPerson = new Person(person.roomsCount - roomsCount, args[2], args[4], roomsBill);
-                    personArrayList.set(position, newPerson);
-                    mHotel.availability[index] += roomsCount;
-                    notifyRoomListeners(args[2]);
-                    return "Updated booking:  " + newPerson.name + " has booked " + newPerson.roomsCount + " rooms of type "
+            if (mHotel.cancel(person, roomType, roomName)) {
+                if (person.roomsCount - roomCount > 0) {
+                    roomBill = roomCount * mHotel.getPrice(roomType);
+                    Person newPerson = new Person(person.roomsCount - roomCount, roomType, roomName, roomBill);
+                    personArrayList.set(personArrayList.indexOf(person), newPerson);
+                    mHotel.updateAvail(roomType, roomCount);
+                    notifyRoomListeners(roomType);
+                    cancelResult = "Updated booking:  " + newPerson.name + " has booked " + newPerson.roomsCount + " rooms of type "
                             + newPerson.roomType + " for " + newPerson.roomBill + " euros.";
                 } else {
-                    personArrayList.remove(position);
-                    notifyRoomListeners(args[2]);
-                    return "Removed booking!";
+                    personArrayList.remove(person);
+                    mHotel.updateAvail(roomType, roomCount);
+                    notifyRoomListeners(roomType);
+                    cancelResult = "Removed booking!";
                 }
             }
         }
-        return "Cant find specified room!";
+        return cancelResult;
     }
 
     private void notifyRoomListeners(String roomType) {
