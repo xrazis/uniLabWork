@@ -105,7 +105,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
 
     }
 
-    public void DoPause ()
+    public void DoPause()
     {
         ShowMessage ("Music: Pause");
         Act = false;
