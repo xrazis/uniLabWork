@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MultiComms_lab" target="" />
+      <module name="MultiComms_lab" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
