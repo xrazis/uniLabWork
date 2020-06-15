@@ -8,8 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static ClientSide.Client_Data.*;
-
 public class Client extends Application {
 
     public Client_Data mData = new Client_Data();

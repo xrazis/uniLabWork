@@ -30,12 +30,12 @@ public class Controller_Options01 implements Initializable {
     public void getSpeedFormat(ActionEvent actionEvent) throws IOException {
         String speed = (String) speedChoiceBox.getValue();
         String format = (String) formatChoiceBox.getValue();
-//        System.out.println(Client_Data.sendSpeedFormat(speed, format));
-        //        changeScene(actionEvent, "OptionScene02.fxml");
+        System.out.println(Client_Data.sendSpeedFormat(speed, format));
+        changeScene(actionEvent, "OptionScene02.fxml");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Client_Data.test();
+
     }
 }

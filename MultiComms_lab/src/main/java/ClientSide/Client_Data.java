@@ -1,40 +1,36 @@
 package ClientSide;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 public class Client_Data {
-    protected Socket socket;
-    protected PrintWriter out;
-    protected BufferedReader in;
+    protected static Socket socket;
+    protected static DataOutputStream out;
+    protected static DataInputStream in;
 
-    protected String connSpeed;
-    protected String format;
+    protected static String connSpeed;
+    protected static String format;
 
     public String makeServerConn(String host, int port) throws IOException {
         socket = new Socket(host, port);
-        out = new PrintWriter(socket.getOutputStream(), true);
-        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        out.println("Connected!");
+        out = new DataOutputStream(socket.getOutputStream());
+        in = new DataInputStream(new DataInputStream(socket.getInputStream()));
         return "Connected to server";
     }
 
-    public void test() {
-        out.println("hey");
+    public static void test() throws IOException {
+        out.writeUTF("hey");
         System.out.println("test");
     }
 
-    public String sendSpeedFormat(String iSpeed, String iFormat) {
+    public static String sendSpeedFormat(String iSpeed, String iFormat) throws IOException {
         connSpeed = iSpeed;
         format = iFormat;
 
-        out.write(connSpeed);
-        out.write(format);
+        out.writeUTF(connSpeed);
+        out.writeUTF(format);
 
-        return "okay";
+        return "Data were sent to server";
     }
 
 }

@@ -1,17 +1,24 @@
 package ServerSide;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.awt.*;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.stream.Stream;
 
 public class Server {
-    protected static PrintWriter out;
-    protected static BufferedReader in;
-    protected static Socket socket;
-    protected static ServerSocket server;
+    private static DataOutputStream out;
+    private static DataInputStream in;
+    private static Socket socket;
+    private static ServerSocket server;
+
+    private static String speed;
+    private static String format;
+    private static ArrayList<String> videos = new ArrayList<String>();
 
     public static void startServer(int port) {
         try {
@@ -22,8 +29,8 @@ public class Server {
             socket = server.accept();
             System.out.println("Client accepted");
 
-            out = new PrintWriter(socket.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new DataOutputStream(socket.getOutputStream());
+            in = new DataInputStream(new DataInputStream(socket.getInputStream()));
 
             getSpeedFormat();
         } catch (IOException e) {
@@ -32,11 +39,33 @@ public class Server {
     }
 
     private static void getSpeedFormat() throws IOException {
-        String speed = in.readLine();
-        String format = in.readLine();
+        speed = in.readUTF();
+        format = in.readUTF();
+        System.out.println("Got speed:" + speed + " and format:" + format);
+
+        searchForFiles();
+    }
+
+    private static void searchForFiles() {
+//        switch (speed)
+    }
+
+    public static void getFilesFromDir(String dir) {
+        try (Stream<Path> paths = Files.walk(Paths.get(dir))) {
+            paths
+                    .filter(Files::isRegularFile)
+                    .forEach(file -> videos.add(String.valueOf((file.getFileName()))));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
+        getFilesFromDir("/home/xaris/Desktop/repos/Uni/MultiComms_lab/videos");
+        for (String video : videos) {
+            System.out.println(video);
+        }
+
         startServer(5000);
     }
 
