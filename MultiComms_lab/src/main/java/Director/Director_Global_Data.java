@@ -21,6 +21,7 @@ public class Director_Global_Data {
 
     public static final ArrayList<String> videos = new ArrayList<String>();
 
+    //Reads files from dir and adds them to an ArrayList.
     public static void getFilesFromDir(String dir) {
         try (Stream<Path> paths = Files.walk(Paths.get(dir))) {
             paths
@@ -31,6 +32,7 @@ public class Director_Global_Data {
         }
     }
 
+    //Reads the files from the Arraylist and initiates building method.
     public static void buildFiles() throws IOException {
         FFmpeg ffmpeg = null;
         FFprobe ffprobe = null;
@@ -52,10 +54,11 @@ public class Director_Global_Data {
         for (String video : videos) {
             builder(executor, video, "avi");
             builder(executor, video, "mp4");
-//            builder(executor, video, "mkv");
+            builder(executor, video, "matroska");
         }
     }
 
+    //The actual ffmpeg builder functionality.
     public static void builder(FFmpegExecutor executor, String video, String format) {
         String outName = FilenameUtils.removeExtension(video);
 
@@ -97,6 +100,7 @@ public class Director_Global_Data {
         executor.createJob(builder_4).run();
     }
 
+    //Deletes raw videos.
     public static void deleteFiles() throws IOException {
         FileUtils.cleanDirectory(new File(inputDir));
     }

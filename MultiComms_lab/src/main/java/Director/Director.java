@@ -9,8 +9,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Director extends Application {
-    public static Director_Global_Data mData = new Director_Global_Data();
-
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Director_Landing_Scene.fxml"));

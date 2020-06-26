@@ -6,28 +6,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Client_Controller_Options02">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Client_Controller_Options02">
     <Label layoutX="207.0" layoutY="56.0" text="Files Menu">
         <font>
-            <Font size="36.0" />
+            <Font size="36.0"/>
         </font>
     </Label>
     <Group layoutX="221.0" layoutY="148.0">
-        <Label layoutX="7.0" layoutY="-8.0" text="Choose file to transfer" />
+        <Label layoutX="7.0" layoutY="-8.0" text="Choose file to transfer"/>
         <ChoiceBox fx:id="fileToTransfer" layoutX="4.0" layoutY="25.0" prefWidth="150.0">
         </ChoiceBox>
     </Group>
     <Group layoutX="225.0" layoutY="225.0">
-        <Label layoutX="-5.0" text="Choose transfer protocol" />
+        <Label layoutX="-5.0" text="Choose transfer protocol"/>
         <ChoiceBox fx:id="protocolToTransfer" layoutY="25.0" prefWidth="150.0">
-            <String fx:value="UDP" />
-            <String fx:value="TCP" />
-            <String fx:value="RTP/UDP" />
+            <String fx:value="udp"/>
+            <String fx:value="tcp"/>
+            <String fx:value="rtp"/>
         </ChoiceBox>
     </Group>
-    <Button layoutX="244.0" layoutY="317.0" mnemonicParsing="false" onAction="#getFile" style="-fx-background-color: teal;" text="Submit" textFill="WHITE">
+    <Button layoutX="244.0" layoutY="317.0" mnemonicParsing="false" onAction="#getFile"
+            style="-fx-background-color: teal;" text="Submit" textFill="WHITE">
         <font>
-            <Font size="24.0" />
+            <Font size="24.0"/>
         </font>
     </Button>
 </AnchorPane>

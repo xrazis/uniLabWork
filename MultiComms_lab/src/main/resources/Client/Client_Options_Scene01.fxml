@@ -25,9 +25,9 @@
     <Group layoutX="225.0" layoutY="225.0">
         <Label layoutX="15.0" text="Choose file format"/>
         <ChoiceBox layoutY="25.0" prefWidth="150.0" fx:id="formatChoiceBox">
-            <String fx:value=".avi"/>
-            <String fx:value=".mp4"/>
-            <String fx:value=".mkv"/>
+            <String fx:value="avi"/>
+            <String fx:value="mp4"/>
+            <String fx:value="mkv"/>
         </ChoiceBox>
     </Group>
     <Button layoutX="244.0" layoutY="317.0" mnemonicParsing="false" style="-fx-background-color: teal;" text="Submit"

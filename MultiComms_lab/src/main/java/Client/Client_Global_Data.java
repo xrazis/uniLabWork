@@ -1,82 +1,47 @@
 package Client;
 
-import net.bramp.ffmpeg.FFmpeg;
-import net.bramp.ffmpeg.FFmpegExecutor;
-import net.bramp.ffmpeg.FFprobe;
-import net.bramp.ffmpeg.builder.FFmpegBuilder;
-
-import java.io.*;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
 public class Client_Global_Data {
     private static Socket socket;
-    private static DataOutputStream out;
-    private static ObjectInputStream in;
+    private static DataOutputStream dataOut;
+    private static ObjectInputStream objIn;
 
     private static String connSpeed;
     private static String format;
     public static ArrayList<String> matchingVideos = new ArrayList<String>();
 
+    //Makes the server connection.
     public static void makeServerConn(String host, int port) throws IOException {
         socket = new Socket(host, port);
-        out = new DataOutputStream(socket.getOutputStream());
-        in = new ObjectInputStream(socket.getInputStream());
+        dataOut = new DataOutputStream(new DataOutputStream(socket.getOutputStream()));
+        objIn = new ObjectInputStream(socket.getInputStream());
     }
 
+    //Sends the speed and format to the server.
     public static void sendSpeedFormat(String iSpeed, String iFormat) throws IOException, ClassNotFoundException {
         connSpeed = iSpeed;
         format = iFormat;
-        out.writeUTF(connSpeed);
-        out.writeUTF(format);
+        dataOut.writeUTF(connSpeed);
+        dataOut.writeUTF(format);
         getMatchingList();
     }
 
+    //Gets back an ArrayList from the server containing all the matching videos for the specific speed and format.
     public static void getMatchingList() throws IOException, ClassNotFoundException {
-        matchingVideos = (ArrayList<String>) in.readObject();
-        for (String video : matchingVideos) {
-            System.out.println(video);
-        }
+        matchingVideos = (ArrayList<String>) objIn.readObject();
     }
 
-    public static void getFile(String file, String protocol) throws IOException {
-        out.writeUTF(protocol);
-        out.writeUTF(file);
-        String fetchFile = "/home/xaris/Desktop/repos/Uni/MultiComms_lab/fetched_file/" + file;
+    //Initiates listening for the streamer and sends file and protocol to the server.
+    public static void getFile(String file, String protocol) throws IOException, InterruptedException {
+        Process p = Runtime.getRuntime().exec("ffplay -i " + protocol + "://127.0.0.1:2000?listen");
+        System.out.println(p.waitFor());
 
-        InputStream fin = socket.getInputStream();
-        OutputStream fout = new FileOutputStream(fetchFile);
-
-        String outputDir = System.getProperty("user.dir") + "/fetched_file/";
-        FFmpeg ffmpeg = null;
-        FFprobe ffprobe = null;
-
-        try {
-            ffmpeg = new FFmpeg("/usr/bin/ffmpeg");
-            ffprobe = new FFprobe("/usr/bin/ffprobe");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        assert ffmpeg != null;
-        assert ffprobe != null;
-        FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
-
-        FFmpegBuilder builder = new FFmpegBuilder()
-                .setInput(String.valueOf(fin))
-                .addOutput(outputDir)
-                .setFormat("avi")
-                .done();
-
-        executor.createJob(builder).run();
-//
-//        byte[] buffer = new byte[8192];
-//        int count;
-//        while ((count = fin.read(buffer)) > 0) {
-//            fout.write(buffer, 0, count);
-//        }
-
-        fin.close();
-        fout.close();
+        dataOut.writeUTF(protocol);
+        dataOut.writeUTF(file);
     }
 }
