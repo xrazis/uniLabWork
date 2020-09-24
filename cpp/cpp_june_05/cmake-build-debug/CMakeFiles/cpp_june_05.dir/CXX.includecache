@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xrazis/CLionProjects/cpp_june_05/cell.h
+string
+-
+
+/home/xrazis/CLionProjects/cpp_june_05/main.cpp
+iostream
+-
+cell.h
+/home/xrazis/CLionProjects/cpp_june_05/cell.h
+sheet.h
+/home/xrazis/CLionProjects/cpp_june_05/sheet.h
+
+/home/xrazis/CLionProjects/cpp_june_05/sheet.cpp
+map
+-
+iostream
+-
+fstream
+-
+sheet.h
+/home/xrazis/CLionProjects/cpp_june_05/sheet.h
+
+/home/xrazis/CLionProjects/cpp_june_05/sheet.h
+map
+-
+cell.h
+/home/xrazis/CLionProjects/cpp_june_05/cell.h
+

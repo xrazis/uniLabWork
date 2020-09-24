@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cpp_june_03.dir/main.cpp.o CMakeFiles/cpp_june_03.dir/book.cpp.o CMakeFiles/cpp_june_03.dir/scItem.cpp.o CMakeFiles/cpp_june_03.dir/bookstoreItem.cpp.o CMakeFiles/cpp_june_03.dir/warehouse.cpp.o  -o cpp_june_03 

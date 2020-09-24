@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xrazis/CLionProjects/cpp_june_04/FIFOQueue.h
+list
+-
+roomAction.h
+/home/xrazis/CLionProjects/cpp_june_04/roomAction.h
+
+/home/xrazis/CLionProjects/cpp_june_04/checkIn.h
+roomAction.h
+/home/xrazis/CLionProjects/cpp_june_04/roomAction.h
+
+/home/xrazis/CLionProjects/cpp_june_04/main.cpp
+iostream
+-
+checkIn.h
+/home/xrazis/CLionProjects/cpp_june_04/checkIn.h
+FIFOQueue.h
+/home/xrazis/CLionProjects/cpp_june_04/FIFOQueue.h
+
+/home/xrazis/CLionProjects/cpp_june_04/room.h
+string
+/home/xrazis/CLionProjects/cpp_june_04/string
+
+/home/xrazis/CLionProjects/cpp_june_04/roomAction.h
+room.h
+/home/xrazis/CLionProjects/cpp_june_04/room.h
+

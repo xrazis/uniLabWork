@@ -1,0 +1,7 @@
+
+ ID: 123 	 Name: Razis	 Surname: Haris	 Days of Stay: 10	
+ Number: 11 	 Floor: 0	 Amenities: Has toilet	 Capacity: 5	 Smoking: 1
+ Description: Old client
+ ID: 123 	 Name: Razis	 Surname: Haris	 Days of Stay: 10	
+ Number: 12 	 Floor: 1	 Amenities: Has toilet and sea view	 Capacity: 5	 Smoking: 0
+ Description: Old client's brother

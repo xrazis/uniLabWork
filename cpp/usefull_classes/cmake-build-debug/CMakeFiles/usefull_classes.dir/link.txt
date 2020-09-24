@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/usefull_classes.dir/main.cpp.o  -o usefull_classes 

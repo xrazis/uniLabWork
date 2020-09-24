@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xrazis/CLionProjects/cpp_june_02/client.h
+list
+-
+string
+-
+
+/home/xrazis/CLionProjects/cpp_june_02/clientList.h
+doctor.h
+/home/xrazis/CLionProjects/cpp_june_02/doctor.h
+client.h
+/home/xrazis/CLionProjects/cpp_june_02/client.h
+
+/home/xrazis/CLionProjects/cpp_june_02/doctor.h
+list
+-
+string
+-
+clientList.h
+/home/xrazis/CLionProjects/cpp_june_02/clientList.h
+
+/home/xrazis/CLionProjects/cpp_june_02/doctorList.h
+client.h
+/home/xrazis/CLionProjects/cpp_june_02/client.h
+doctor.h
+/home/xrazis/CLionProjects/cpp_june_02/doctor.h
+
+/home/xrazis/CLionProjects/cpp_june_02/main.cpp
+iostream
+-
+doctor.h
+/home/xrazis/CLionProjects/cpp_june_02/doctor.h
+client.h
+/home/xrazis/CLionProjects/cpp_june_02/client.h
+clientList.h
+/home/xrazis/CLionProjects/cpp_june_02/clientList.h
+doctorList.h
+/home/xrazis/CLionProjects/cpp_june_02/doctorList.h
+

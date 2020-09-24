@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cpp_june_07.dir/main.cpp.o CMakeFiles/cpp_june_07.dir/picture.cpp.o CMakeFiles/cpp_june_07.dir/pixel.cpp.o CMakeFiles/cpp_june_07.dir/spf.cpp.o  -o cpp_june_07 

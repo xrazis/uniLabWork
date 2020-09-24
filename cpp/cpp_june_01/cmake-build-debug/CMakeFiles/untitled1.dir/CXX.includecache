@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xrazis/CLionProjects/cpp_june_01/employee.h
+string
+-
+
+/home/xrazis/CLionProjects/cpp_june_01/main.cpp
+iostream
+-
+string
+-
+vector
+-
+employee.h
+/home/xrazis/CLionProjects/cpp_june_01/employee.h
+seasonal.h
+/home/xrazis/CLionProjects/cpp_june_01/seasonal.h
+salaried.h
+/home/xrazis/CLionProjects/cpp_june_01/salaried.h
+manager.h
+/home/xrazis/CLionProjects/cpp_june_01/manager.h
+
+/home/xrazis/CLionProjects/cpp_june_01/manager.h
+salaried.h
+/home/xrazis/CLionProjects/cpp_june_01/salaried.h
+
+/home/xrazis/CLionProjects/cpp_june_01/salaried.h
+employee.h
+/home/xrazis/CLionProjects/cpp_june_01/employee.h
+
+/home/xrazis/CLionProjects/cpp_june_01/seasonal.h
+employee.h
+/home/xrazis/CLionProjects/cpp_june_01/employee.h
+

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cpp_june_02.dir/main.cpp.o CMakeFiles/cpp_june_02.dir/doctor.cpp.o CMakeFiles/cpp_june_02.dir/client.cpp.o CMakeFiles/cpp_june_02.dir/clientList.cpp.o CMakeFiles/cpp_june_02.dir/doctorList.cpp.o  -o cpp_june_02 

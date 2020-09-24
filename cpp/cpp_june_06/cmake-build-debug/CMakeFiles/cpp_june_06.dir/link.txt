@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cpp_june_06.dir/main.cpp.o CMakeFiles/cpp_june_06.dir/myBigInt.cpp.o CMakeFiles/cpp_june_06.dir/myBigReal.cpp.o  -o cpp_june_06 
