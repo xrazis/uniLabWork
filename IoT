@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-15T12:42:52.346Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="GWG4P0TqspumEZ2U6A53" version="13.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-15T12:46:29.026Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="0dg0X5dxWesn-abDoHmx" version="13.8.8" type="github">
   <diagram id="3G95iw_2D18cc_u-nv51" name="Page-1">
     <mxGraphModel dx="2574" dy="1357" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -25,7 +25,7 @@
         <mxCell id="wvB1xW_Ea-u64dSamJn8-2" value="" style="verticalLabelPosition=bottom;html=1;fillColor=#A153A0;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0,0.5,0],[0.125,0.25,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[0.875,0.25,0],[1,0.5,0],[0.875,0.75,0],[0.75,1,0],[0.5,1,0],[0.125,0.75,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.design.blank_device;resIcon=mxgraph.cisco_safe.design.sensor;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="105" y="20" width="50" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="kzaaDGq-D1keOlMGyQsO-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.4;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wvB1xW_Ea-u64dSamJn8-7" target="wvB1xW_Ea-u64dSamJn8-8">
+        <mxCell id="kzaaDGq-D1keOlMGyQsO-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.625;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wvB1xW_Ea-u64dSamJn8-7" target="wvB1xW_Ea-u64dSamJn8-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wvB1xW_Ea-u64dSamJn8-7" value="Server" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3700CC;fontColor=#ffffff;fontStyle=1;fillColor=#6a00ff;" parent="1" vertex="1">
@@ -40,8 +40,12 @@
         <mxCell id="wvB1xW_Ea-u64dSamJn8-14" value="&lt;font color=&quot;#000000&quot;&gt;Container on Pi&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="70" y="260" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="kzaaDGq-D1keOlMGyQsO-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wvB1xW_Ea-u64dSamJn8-16" target="wvB1xW_Ea-u64dSamJn8-8">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="kzaaDGq-D1keOlMGyQsO-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="wvB1xW_Ea-u64dSamJn8-8" target="wvB1xW_Ea-u64dSamJn8-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="573" y="390" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="wvB1xW_Ea-u64dSamJn8-16" value="&lt;b&gt;Web&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
           <mxGeometry x="320" y="360" width="120" height="60" as="geometry" />
