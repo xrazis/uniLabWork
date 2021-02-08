@@ -1,0 +1,3 @@
+/home/xrazis/Dropbox/exams_sem_cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/xrazis/Dropbox/exams_sem_cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/xrazis/Dropbox/exams_sem_cpp/cmake-build-debug/CMakeFiles/exams_sem.dir

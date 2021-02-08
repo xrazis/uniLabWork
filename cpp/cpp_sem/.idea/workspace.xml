@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="exams_sem" targetName="exams_sem" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f494815a-065e-41eb-bdf3-4a68bc816b73" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1hx2FGukHQ81PsHUvZWfiqjLDAD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exams_sem" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="exams_sem" TARGET_NAME="exams_sem" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="exams_sem" RUN_TARGET_NAME="exams_sem">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f494815a-065e-41eb-bdf3-4a68bc816b73" name="Default Changelist" comment="" />
+      <created>1600938317123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600938317123</updated>
+      <workItem from="1600938319873" duration="5488000" />
+      <workItem from="1603788091007" duration="987000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="728" y="242" width="463" height="590" key="#com.intellij.ide.util.MemberChooser" timestamp="1600940726862">
+      <screen x="0" y="27" width="1920" height="992" />
+    </state>
+    <state x="728" y="242" width="463" height="590" key="#com.intellij.ide.util.MemberChooser/0.27.1920.992@0.27.1920.992" timestamp="1600940726862" />
+    <state width="1878" height="254" key="GridCell.Tab.0.bottom" timestamp="1603789079568">
+      <screen x="0" y="27" width="1920" height="984" />
+    </state>
+    <state width="1878" height="254" key="GridCell.Tab.0.bottom/0.27.1920.984@0.27.1920.984" timestamp="1603789079568" />
+    <state width="1878" height="244" key="GridCell.Tab.0.bottom/0.27.1920.992@0.27.1920.992" timestamp="1600943817679" />
+    <state width="1878" height="254" key="GridCell.Tab.0.center" timestamp="1603789079567">
+      <screen x="0" y="27" width="1920" height="984" />
+    </state>
+    <state width="1878" height="254" key="GridCell.Tab.0.center/0.27.1920.984@0.27.1920.984" timestamp="1603789079567" />
+    <state width="1878" height="244" key="GridCell.Tab.0.center/0.27.1920.992@0.27.1920.992" timestamp="1600943817679" />
+    <state width="1878" height="254" key="GridCell.Tab.0.left" timestamp="1603789079566">
+      <screen x="0" y="27" width="1920" height="984" />
+    </state>
+    <state width="1878" height="254" key="GridCell.Tab.0.left/0.27.1920.984@0.27.1920.984" timestamp="1603789079566" />
+    <state width="1878" height="244" key="GridCell.Tab.0.left/0.27.1920.992@0.27.1920.992" timestamp="1600943817678" />
+    <state width="1878" height="254" key="GridCell.Tab.0.right" timestamp="1603789079568">
+      <screen x="0" y="27" width="1920" height="984" />
+    </state>
+    <state width="1878" height="254" key="GridCell.Tab.0.right/0.27.1920.984@0.27.1920.984" timestamp="1603789079568" />
+    <state width="1878" height="244" key="GridCell.Tab.0.right/0.27.1920.992@0.27.1920.992" timestamp="1600943817679" />
+  </component>
+</project>
