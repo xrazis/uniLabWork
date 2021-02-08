@@ -1,3 +1,0 @@
-/home/xrazis/CLionProjects/cpp_june_05/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/xrazis/CLionProjects/cpp_june_05/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/xrazis/CLionProjects/cpp_june_05/cmake-build-debug/CMakeFiles/cpp_june_05.dir

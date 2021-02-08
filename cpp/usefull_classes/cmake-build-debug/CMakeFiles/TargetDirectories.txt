@@ -1,3 +1,0 @@
-/home/xrazis/CLionProjects/usefull_classes/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/xrazis/CLionProjects/usefull_classes/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/xrazis/CLionProjects/usefull_classes/cmake-build-debug/CMakeFiles/usefull_classes.dir

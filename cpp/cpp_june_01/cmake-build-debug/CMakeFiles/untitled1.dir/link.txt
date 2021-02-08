@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/untitled1.dir/main.cpp.o CMakeFiles/untitled1.dir/employee.cpp.o CMakeFiles/untitled1.dir/seasonal.cpp.o CMakeFiles/untitled1.dir/salaried.cpp.o CMakeFiles/untitled1.dir/manager.cpp.o  -o untitled1 
