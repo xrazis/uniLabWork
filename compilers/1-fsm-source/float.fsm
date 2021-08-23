@@ -1,0 +1,26 @@
+START=F0
+F0: 0 -> F6
+    1-9 -> F1
+    * -> BAD
+F1: 0-9 -> F1
+    e E -> F3
+    . -> F2
+    \n -> GOOD
+    * -> BAD
+F2: 0-9 -> F5
+    > BAD
+F3: 0-9 -> F4
+    - -> F4
+    * -> BAD
+F4: 0-9 -> F4
+    \n -> GOOD
+    * -> BAD
+F5: 0-9 -> F5
+    e E -> F3
+    \n -> GOOD
+    * -> BAD
+F6: e E -> F3
+    . -> F2
+    \n -> GOOD
+    * -> BAD
+GOOD(OK):

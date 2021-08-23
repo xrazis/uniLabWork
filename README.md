@@ -1,3 +1,1 @@
-## UniWA
-
-Some of my lab assignments.
+Some of my lab assignments that dont deserve a standalone repo.

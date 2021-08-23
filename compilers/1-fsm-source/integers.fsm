@@ -1,0 +1,18 @@
+START=I0
+I0: 0 -> I1
+    1-9 -> I4
+    * -> BAD
+I1: x X -> I3
+    0-7 -> I2
+    \n -> GOOD
+    * -> BAD
+I2: 0-7 -> I2
+    * -> BAD
+    \n -> GOOD
+I3: A-F 0-9 -> I3
+    * -> BAD
+    \n -> GOOD
+I4: 0-9 -> I4
+    * -> BAD
+    \n -> GOOD
+GOOD(OK):
