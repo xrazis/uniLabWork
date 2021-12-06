@@ -129,30 +129,6 @@ parSys01/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/parSys01.dir/build.make CMakeFiles/parSys01.dir/build
 .PHONY : parSys01/fast
 
-largeMatrices.o: largeMatrices.c.o
-.PHONY : largeMatrices.o
-
-# target to build an object file
-largeMatrices.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/parSys01.dir/build.make CMakeFiles/parSys01.dir/largeMatrices.c.o
-.PHONY : largeMatrices.c.o
-
-largeMatrices.i: largeMatrices.c.i
-.PHONY : largeMatrices.i
-
-# target to preprocess a source file
-largeMatrices.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/parSys01.dir/build.make CMakeFiles/parSys01.dir/largeMatrices.c.i
-.PHONY : largeMatrices.c.i
-
-largeMatrices.s: largeMatrices.c.s
-.PHONY : largeMatrices.s
-
-# target to generate assembly for a file
-largeMatrices.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/parSys01.dir/build.make CMakeFiles/parSys01.dir/largeMatrices.c.s
-.PHONY : largeMatrices.c.s
-
 main.o: main.c.o
 .PHONY : main.o
 
@@ -186,9 +162,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... parSys01"
-	@echo "... largeMatrices.o"
-	@echo "... largeMatrices.i"
-	@echo "... largeMatrices.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

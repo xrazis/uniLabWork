@@ -76,12 +76,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/xrazis/CLionProjects/university/parallelSystems/parSys01/largeMatrices.c">
-			<Option target="parSys01"/>
-		</Unit>
-		<Unit filename="/home/xrazis/CLionProjects/university/parallelSystems/parSys01/largeMatrices.h">
-			<Option target="parSys01"/>
-		</Unit>
 		<Unit filename="/home/xrazis/CLionProjects/university/parallelSystems/parSys01/main.c">
 			<Option target="parSys01"/>
 		</Unit>

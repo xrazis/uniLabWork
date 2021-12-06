@@ -81,12 +81,12 @@ clean: CMakeFiles/parSys01.dir/clean
 CMakeFiles/parSys01.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/parSys01.dir/build.make CMakeFiles/parSys01.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/parSys01.dir/build.make CMakeFiles/parSys01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xrazis/CLionProjects/university/parallelSystems/parSys01/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target parSys01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xrazis/CLionProjects/university/parallelSystems/parSys01/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target parSys01"
 .PHONY : CMakeFiles/parSys01.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/parSys01.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrazis/CLionProjects/university/parallelSystems/parSys01/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrazis/CLionProjects/university/parallelSystems/parSys01/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/parSys01.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xrazis/CLionProjects/university/parallelSystems/parSys01/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/parSys01.dir/rule
