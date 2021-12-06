@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/parSys01.dir/largeMatrices.c.o"
-  "CMakeFiles/parSys01.dir/largeMatrices.c.o.d"
   "CMakeFiles/parSys01.dir/main.c.o"
   "CMakeFiles/parSys01.dir/main.c.o.d"
   "parSys01"
