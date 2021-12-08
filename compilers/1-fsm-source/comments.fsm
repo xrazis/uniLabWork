@@ -1,0 +1,15 @@
+START=C0
+C0: / -> C1
+    * -> BAD
+C1: / -> C2
+    \* -> C3
+    * -> BAD
+C2: \n -> GOOD
+    * -> C2
+C3: \* -> C4
+    * -> C3
+C4: / -> GOOD
+    \* -> C4
+    \n -> C3
+    * -> C3
+GOOD(OK):
