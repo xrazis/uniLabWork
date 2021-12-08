@@ -1,7 +1,0 @@
-START=V0
-V0: A-Z a-z _ -> V1
-    * -> BAD
-V1: A-Z a-z _ 0-9 -> V1
-    \n -> GOOD
-    * -> BAD
-GOOD(OK):

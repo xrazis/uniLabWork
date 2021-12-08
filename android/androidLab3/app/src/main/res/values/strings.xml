@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Memory Game</string>
-    <string name="strOptionsTitle">ΕΠΙΛΟΓΕΣ</string>
-    <string name="strWidth">Μηκος</string>
-    <string name="strWigthHint">Μηκος σε εικονες</string>
-    <string name="strHeight">Υψος</string>
-    <string name="steHeightHint">Υψος σε εικονες</string>
-</resources>

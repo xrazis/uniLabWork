@@ -1,4 +1,0 @@
-/home/xrazis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/xrazis/CLionProjects/university/parallelSystems/parSys01
--- Configuring done
--- Generating done
--- Build files have been written to: /home/xrazis/CLionProjects/university/parallelSystems/parSys01/cmake-build-debug
