@@ -132,20 +132,20 @@ int main() {
     sddArray = (int *) malloc(sddArraySize * sddArraySize * sizeof(int));
     sddMaxArray = (int *) malloc(sddArraySize * sddArraySize * sizeof(int));
 
-    for (i = 0; i < sddArraySize; i++) {
-        for (j = 0; j < sddArraySize; j++) {
-            printf("\nGive element [%d][%d]=", i, j);
-            scanf("%d", &sddArray[i * sddArraySize + i]);
-        }
-    }
-
     printf("\nEnter number of threads for OpenMP: ");
     scanf("%d", &numThreads);
 
     printf("\nSetting %d threads", numThreads);
     omp_set_num_threads(numThreads);
 
-    chunk = sddArraySize / omp_get_num_threads();
+    for (i = 0; i < sddArraySize; i++) {
+        for (j = 0; j < sddArraySize; j++) {
+            printf("\nGive element [%d][%d]=", i, j);
+            scanf("%d", &sddArray[i * sddArraySize + j]);
+        }
+    }
+
+    chunk = sddArraySize / numThreads;
     if (chunk == 0) chunk = 1;
 
 #pragma clang diagnostic push
